@@ -1,0 +1,40 @@
+{% extends "template.html" %}
+{% block titles %} Actualités {% endblock %}
+{% block content %}
+{{super()}}
+<button type="button" class="btn btn-primary" disabled>Actualités</button>
+<br />
+    <button type="button" class="btn btn-primary" disabled>Jazz</button>
+    <button type="button" class="btn btn-primary" disabled>Rock</button>
+    <button type="button" class="btn btn-primary" disabled>Electro</button>
+<div id="concert">
+    {% for value in data %}
+    <h2>Le{{ value['date'] }} : {{ value['lieu'] }}</h2>
+    <h5>{{ value['description'] }}</h5>
+    {%  endfor %}
+</div>
+<div id="commentaire">
+    <button type="button" class="btn btn-primary" disabled>Commentaire</button>
+    <p>il y a 0 commentaire </p>
+    <h2>Commentaire : </h2>
+    {% if comm %}
+        <h2> {{ comm.nom }} :</h2>
+        <h5>{{ comm.commentaire}}</h5>
+    {%  endif %}
+
+    <button type="button" class="btn btn-primary" disabled>Poster un nouveau commentaire</button>
+    <div class="input-group mb-3">
+        <form action="/actualites" method="POST">
+            <input type="text" class="form-control" placeholder="Nom" id="nom" name="nom" aria-describedby="button-addon2">
+            <input type="text" class="form-control" placeholder="Mon commentaire" id="commentaire" name="commentaire" aria-describedby="button-addon2">
+            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Envoyer</button>
+        </form>
+    </div>
+    </div>
+{% endblock %}
+
+
+
+    
+
+
