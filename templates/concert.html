@@ -2,4 +2,31 @@
 {% block titles %} Concert {% endblock %}
 {% block content %}
 <h1>Actualités Concert </h1>
+
+{{super()}}
+<div id="concert">
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Date</th>
+            <th scope="col">Nom</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for value in data %}
+            <tr>
+               
+              <td>Le{{ value['date'] }} : {{ value['lieu'] }}</td>
+              <td>{{ value['nom'] }}</td>
+              <td><button type="button" class="btn btn-primary" disabled>supprimer</button></td>
+            </tr>
+            {%  endfor %}
+        </tbody>
+    </table>
+    <a class="nav-link" href="ajout_concert">Ajouter un Concert</a>
+
 {% endblock %}
+
+

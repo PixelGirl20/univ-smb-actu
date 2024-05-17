@@ -8,10 +8,29 @@
     <button type="button" class="btn btn-primary" disabled>Rock</button>
     <button type="button" class="btn btn-primary" disabled>Electro</button>
 <div id="concert">
-    {% for value in data %}
-    <h2>Le{{ value['date'] }} : {{ value['lieu'] }}</h2>
-    <h5>{{ value['description'] }}</h5>
-    {%  endfor %}
+    <table class="table">
+        <thead>
+          <tr>
+            
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% if ajoutactu %}
+            <tr>
+               
+              <td>Le {{ajoutactu.date }} : {{ ajoutactu.nom }}</td>
+              <td>{{ ajoutactu.description}}</td>
+              <td><button type="button" class="btn btn-primary" disabled>supprimer</button></td>
+              
+            </tr>
+            {%  endif %}
+        </tbody>
+    </table>
+    
+    <a class="nav-link" href="ajout_actu">Ajouter une Actualités</a>
 </div>
 <div id="commentaire">
     <button type="button" class="btn btn-primary" disabled>Commentaire</button>

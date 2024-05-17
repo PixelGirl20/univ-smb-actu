@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block titles %} Actualités Rock {% endblock %}
+{% block content %}
+<h1>Ajout Actualités </h1>
+
+{{super()}}
+
+<div class="input-group mb-3">
+    <form action="/ajout_actu" method="POST">
+        <input type="text" class="form-control" placeholder="nom" id="nom" name="nom" aria-describedby="button-addon2">
+        <input type="text" class="form-control" placeholder="date" id="date" name="date" aria-describedby="button-addon2">
+        <input type="text" class="form-control" placeholder="description" id="description" name="description" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Envoyer</button>
+    </form>
+</div>
+
+
+
+
+{% endblock %}
