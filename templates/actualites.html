@@ -7,31 +7,32 @@
     <button type="button" class="btn btn-primary" disabled>Jazz</button>
     <button type="button" class="btn btn-primary" disabled>Rock</button>
     <button type="button" class="btn btn-primary" disabled>Electro</button>
-<div id="concert">
+
+<!--Partie Actualité-->
+<div id="Actu">
     <table class="table">
         <thead>
           <tr>
-            
             <th scope="col">Date</th>
+            <th scope="col">Nom</th>
             <th scope="col">Description</th>
-            
           </tr>
         </thead>
         <tbody>
             {% if ajoutactu %}
             <tr>
-               
-              <td>Le {{ajoutactu.date }} : {{ ajoutactu.nom }}</td>
+              <td>Le {{ajoutactu.date }} </td>
+              <td>{{ ajoutactu.nom }}</td>
               <td>{{ ajoutactu.description}}</td>
               <td><button type="button" class="btn btn-primary" disabled>supprimer</button></td>
-              
             </tr>
             {%  endif %}
         </tbody>
     </table>
-    
     <a class="nav-link" href="ajout_actu">Ajouter une Actualités</a>
 </div>
+
+<!--Partie Commentaire-->
 <div id="commentaire">
     <button type="button" class="btn btn-primary" disabled>Commentaire</button>
     <p>il y a 0 commentaire </p>

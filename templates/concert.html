@@ -8,17 +8,16 @@
     <table class="table">
         <thead>
           <tr>
-            
             <th scope="col">Date</th>
+            <th scope="col">lieu</th>
             <th scope="col">Nom</th>
-            
           </tr>
         </thead>
         <tbody>
             {% for value in data %}
             <tr>
-               
-              <td>Le{{ value['date'] }} : {{ value['lieu'] }}</td>
+              <td>Le {{ value['date'] }}</td>
+              <td>{{ value['lieu'] }}</td>
               <td>{{ value['nom'] }}</td>
               <td><button type="button" class="btn btn-primary" disabled>supprimer</button></td>
             </tr>
